@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="358.0" maxWidth="400.0" minHeight="358.0" minWidth="400.0" prefHeight="358" prefWidth="400" style="-fx-background-image: url('/view/images/arbre2.jpg'); -fx-background-color: transparent; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AccueilController">
+     
+    <children>
+       
+      <VBox alignment="CENTER" layoutX="50.0" layoutY="94.0" prefHeight="171.0" prefWidth="300.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#openNouvellePartie" prefHeight="30.0" prefWidth="300.0" text="Nouvelle Partie">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#openChargementPartie" prefHeight="30.0" prefWidth="300.0" text="Charger Partie">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#Quitter" prefHeight="30.0" prefWidth="300.0" text="Quitter" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

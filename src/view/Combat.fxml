@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- <?import model.attaques.AttaqueAbstraite?> -->
+
+<HBox prefHeight="413.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CombatController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="393.0" prefWidth="332.0">
+         <children>
+            <TextArea fx:id="boiteDialogue" editable="false" prefHeight="150.0" prefWidth="314.0" style="-fx-border-color: black;">
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin></TextArea>
+               <Label fx:id="nomPersonnageJoueur" alignment="CENTER" contentDisplay="CENTER" text="Héros" textAlignment="CENTER" />
+            <ProgressBar fx:id="progressBarJoueur" prefHeight="15.0" prefWidth="300.0" progress="0.0" />
+            <GridPane prefHeight="15.0" prefWidth="238.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.0" minWidth="10.0" prefWidth="33.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="33.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="29.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.0" minWidth="10.0" prefWidth="245.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="PV :" />
+                  <Label fx:id="vieActuelleHeros" alignment="CENTER" contentDisplay="CENTER" GridPane.columnIndex="1" />
+                  <Label fx:id="vieTotaleHeros" GridPane.columnIndex="3" />
+                  <Label contentDisplay="CENTER" text="/" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+
+            <ImageView fx:id="imageViewJoueur" fitHeight="203.0" fitWidth="332.0" pickOnBounds="true" preserveRatio="true">
+            </ImageView> 
+         </children>
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="393.0" prefWidth="345.0">
+         <children>
+             <Label fx:id="nomPersonnageAdverse" text="Adversaire" /> 
+            <ProgressBar fx:id="progressBarAdversaire" prefHeight="15.0" prefWidth="300.0" progress="0.0" />
+            <ImageView fx:id="imageViewAdversaire" fitHeight="202.0" fitWidth="344.0" pickOnBounds="true" preserveRatio="true" />
+            <Pane prefHeight="171.0" prefWidth="323.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+               <children>
+                  <VBox fx:id="vBoxChoix" alignment="CENTER" layoutY="-3.0" prefHeight="171.0" prefWidth="356.0">
+                     <children>
+                        <Button fx:id="btnAttaquer" mnemonicParsing="false" onAction="#ouvrirAttaque" text="Attaquer" />
+                        <Button fx:id="btnObjets" mnemonicParsing="false" onAction="#ouvrirObjet" text="Objets">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnFuir" mnemonicParsing="false" onAction="#fuir" text="Fuir" />
+                     </children>
+                  </VBox>
+                  <GridPane fx:id="gridObjets" layoutX="6.0" layoutY="21.0" prefHeight="150.0" prefWidth="345.0" visible="false">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" maxWidth="309.0" minWidth="10.0" prefWidth="272.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="240.0" minWidth="10.0" prefWidth="73.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#retourMenuNormal" text="Retour" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="20.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <ListView prefHeight="200.0" prefWidth="200.0">
+                           <GridPane.margin>
+                              <Insets bottom="30.0" />
+                           </GridPane.margin></ListView>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="gridAttaque" prefHeight="171.0" prefWidth="344.0" visible="false">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+
+                        <Button mnemonicParsing="false" onAction="#retourMenuNormal" text="Retour" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+         </children>
+         <HBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </HBox.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</HBox>
